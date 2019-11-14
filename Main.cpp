@@ -3,7 +3,6 @@
 #include <iostream>
 #include <random>
 #include <sstream>
-#include <cassert>
 #include <fstream>
 #include <cfloat>
 #include <cmrc/cmrc.hpp>
