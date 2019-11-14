@@ -5,5 +5,5 @@ Simple mathematical art
 
 Note: This repository is for reference only, I will not be actively maintaining this project.
 
-This has modified the project to be multiplatform.
+This project has been modified to be cross platform.
 
