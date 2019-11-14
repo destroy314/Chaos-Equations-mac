@@ -9,7 +9,7 @@ set(SFML_STATIC_LIBRARIES TRUE)
 include(CMakeRC.cmake)
 cmrc_add_resource_library(roboto.ttf ALIAS font NAMESPACE roboto)
 
-add_executable(chaosequations main.cpp)
+add_executable(chaosequations Main.cpp)
 
 target_link_libraries(chaosequations PUBLIC font)
 target_link_libraries(chaosequations PUBLIC sfml-graphics)
