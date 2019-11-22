@@ -281,6 +281,12 @@ int main(int argc, char *argv[]) {
     ResetPlot();
     RandParams(params);
     GenerateNew(window, t, params);
+    
+    // Clear both buffers during double-buffering in SFML
+    for(int i = 0; i < 2; i++) {
+		window.clear();
+		window.display();
+	}
 
     //Main Loop
     while (true) {
