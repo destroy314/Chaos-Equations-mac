@@ -7,7 +7,7 @@
 #include <cfloat>
 #include <cmrc/cmrc.hpp>
 
-CMRC_DECLARE(font);
+CMRC_DECLARE(fonts);
 
 //Global constants
 static const int num_params = 18;
@@ -239,7 +239,7 @@ int main(int argc, char *argv[]) {
     //Set random seed
     rand_gen.seed((unsigned int) time(0));
 
-    auto fs = cmrc::font::get_filesystem();
+    auto fs = cmrc::fonts::get_filesystem();
     auto file = fs.open("roboto.ttf");
 
     if (!font.loadFromMemory(file.begin(), file.size())) {
@@ -281,6 +281,12 @@ int main(int argc, char *argv[]) {
     ResetPlot();
     RandParams(params);
     GenerateNew(window, t, params);
+    
+    // Clear both buffers during double-buffering in SFML
+    for(int i = 0; i < 2; i++) {
+		window.clear();
+		window.display();
+	}
 
     //Main Loop
     while (true) {
