@@ -20,8 +20,8 @@ static const double t_end = 3.0;
 static const bool fullscreen = false;
 
 //Global variables
-static int window_w = 1600;
-static int window_h = 900;
+static int window_w = 1200;
+static int window_h = 800;
 static int window_bits = 24;
 static float plot_scale = 0.25f;
 static float plot_x = 0.0f;
@@ -150,7 +150,7 @@ static void GenerateNew(sf::RenderWindow &window, double &t, double *params) {
             equ_code;
     equ_text.setCharacterSize(30);
     equ_text.setFont(font);
-    equ_text.setString(equation_str);
+    equ_text.setString(sf::String::fromUtf8(equation_str.begin(), equation_str.end()));
     equ_text.setFillColor(sf::Color::White);
     equ_text.setPosition(10.0f, 10.0f);
     equ_box = MakeBoundsShape(equ_text);
@@ -172,7 +172,7 @@ static void CreateRenderWindow(sf::RenderWindow &window) {
     settings.depthBits = 24;
     settings.stencilBits = 8;
     settings.antialiasingLevel = 8;
-    settings.majorVersion = 3;
+    settings.majorVersion = 2;
     settings.minorVersion = 0;
 
     //Create the window

@@ -1,26 +1,26 @@
 # Chaos-Equations
-Simple mathematical art – Cross-platform port of https://github.com/HackerPoet/Chaos-Equations
+Simple mathematical art – macOS port of https://github.com/HackerPoet/Chaos-Equations
 
 **Video:** https://youtu.be/fDSIRXmnVvk
 
 ## Build Instructions
 
-Provided is the Unix way of building the project. This hasn't been tested on macOS. Tested to work on a Raspberry Pi.
+Tested on macOS 15.1 with AppleClang 16.0.0
 
-Required dependencies on debian or ubuntu:
+Install required dependencies:
 
 ```bash
-sudo apt install build-essential cmake libsfml-dev
+brew install cmake sfml
 ```
 
-In the projects directory, do the following.
+In the projects directory:
 
 ```bash
-mkdir Release
-cd Release/
-cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+mkdir build
+cd build
+cmake ..
 make
+./chaosequations
 ```
 
-The build artifact will show up in the `Release/` folder and can be executed right away.
-
+The program sometimes causes significant lag.
